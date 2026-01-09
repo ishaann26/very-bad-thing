@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Shivanshi 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ================= GLOBAL ================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+body{
+    overflow:hidden;
+    background:black;
+}
+
+/* ================= PHASE 1 : LANDING ================= */
+#landing{
+    position:fixed;
+    inset:0;
+    background:black;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    transition:opacity 1.5s ease;
+    z-index:10;
+}
+.stars{position:absolute;inset:0;}
+.star{
+    position:absolute;
+    width:2px;height:2px;
+    background:white;
+    border-radius:50%;
+    animation:twinkle 3s infinite;
+}
+@keyframes twinkle{
+    0%,100%{opacity:.2}
+    50%{opacity:1}
+}
+.main-text{
+    font-family:'Great Vibes', cursive;
+    font-size:3.2rem;
+    z-index:2;
+}
+.sub-text{
+    margin-top:10px;
+    opacity:.85;
+    z-index:2;
+}
+.claim-btn{
+    margin-top:40px;
+    padding:14px 40px;
+    border:none;
+    border-radius:30px;
+    background:linear-gradient(45deg,#ff5fa2,#ff9acb);
+    color:white;
+    cursor:pointer;
+    box-shadow:0 0 30px hotpink;
+    transition:.4s;
+    z-index:2;
+}
+.claim-btn:hover{
+    transform:scale(1.07);
+}
+
+/* ================= PHASE 2 : MEMORY ================= */
+#memory{
+    position:fixed;
+    inset:0;
+    background:linear-gradient(180deg,#ffd6e8,#ffb3d9);
+    overflow-y:auto;
+    padding:70px 20px;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity 1.5s ease;
+    z-index:5;
+}
+.section{
+    max-width:900px;
+    margin:80px auto;
+    background:rgba(255,255,255,.65);
+    padding:45px;
+    border-radius:30px;
+    box-shadow:0 0 40px rgba(255,105,180,.35);
+}
+.title{
+    font-family:'Great Vibes', cursive;
+    font-size:3rem;
+    color:#c2185b;
+    text-align:center;
+    margin-bottom:25px;
+}
+.text{
+    font-size:1.05rem;
+    line-height:1.9;
+    color:#6a0032;
+    text-align:center;
+}
+.continue-btn{
+    display:block;
+    margin:35px auto 0;
+    padding:12px 32px;
+    border:none;
+    border-radius:25px;
+    background:linear-gradient(45deg,#ff4081,#f50057);
+    color:white;
+    cursor:pointer;
+    box-shadow:0 0 25px rgba(245,0,87,.6);
+}
+
+/* floating flowers */
+.flower{
+    position:fixed;
+    font-size:26px;
+    opacity:.6;
+    animation:float 9s linear infinite;
+}
+@keyframes float{
+    from{transform:translateY(100vh)}
+    to{transform:translateY(-10vh)}
+}
+
+/* ================= PHASE 3 : POPUP ================= */
+.popup{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.65);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:20;
+}
+.popup-box{
+    background:linear-gradient(180deg,#ffe0ec,#ffb6d5);
+    padding:35px 45px;
+    border-radius:30px;
+    text-align:center;
+    box-shadow:0 0 45px hotpink;
+}
+.popup-box span{
+    font-family:'Great Vibes', cursive;
+    font-size:1.7rem;
+}
+.popup-box button{
+    margin-top:25px;
+    padding:12px 34px;
+    border:none;
+    border-radius:25px;
+    background:linear-gradient(45deg,#ff4081,#f50057);
+    color:white;
+    cursor:pointer;
+}
+
+/* ================= PHASE 3 : LETTER ================= */
+#phase3{
+    position:fixed;
+    inset:0;
+    background:linear-gradient(180deg,#ffe6f1,#ffbddc);
+    overflow-y:auto;
+    padding:90px 20px;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity 1.2s ease;
+    z-index:15;
+}
+.heart{
+    position:absolute;
+    font-size:24px;
+    animation:heartFloat 6s linear infinite;
+}
+@keyframes heartFloat{
+    from{transform:translateY(100vh) scale(.6)}
+    to{transform:translateY(-10vh) scale(1.3)}
+}
+#typing{white-space:pre-line}
+
+/* ================= PHASE 4 : PROMISE ================= */
+#phase4{
+    position:fixed;
+    inset:0;
+    background:black;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity 1.2s ease;
+    z-index:30;
+}
+.promise-btn{
+    position:absolute;
+    inset:0;
+    margin:auto;
+    width:200px;
+    height:60px;
+    border:none;
+    border-radius:40px;
+    font-size:1.2rem;
+    background:linear-gradient(45deg,#ff5fa2,#ff9acb);
+    color:white;
+    cursor:pointer;
+    box-shadow:0 0 40px hotpink;
+}
+.promise-window{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg,#cfe9ff,#a6d4ff);
+    display:none;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:40px;
+    text-align:center;
+}
+.promise-window h2{
+    font-family:'Great Vibes', cursive;
+    font-size:2.8rem;
+    color:#0d47a1;
+    margin-bottom:30px;
+}
+.promise-window label{
+    margin:12px 0;
+    font-size:1.05rem;
+    color:#08306b;
+}
+
+/* sparkles */
+.sparkle{
+    position:absolute;
+    font-size:18px;
+    animation:sparkle 1s forwards;
+}
+@keyframes sparkle{
+    from{transform:scale(0);opacity:1}
+    to{transform:scale(1.5);opacity:0}
+}
+
+/* goodbye */
+.goodbye{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.9);
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    font-family:'Great Vibes', cursive;
+    font-size:2rem;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity 1.2s ease;
+    z-index:50;
+}
+.goodbye.show{
+    opacity:1;
+    pointer-events:auto;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PHASE 1 -->
+<section id="landing">
+    <div class="stars"></div>
+    <div class="main-text">Hyeee mine yaara…</div>
+    <div class="sub-text">Aapke liye ek gift 💖</div>
+    <button class="claim-btn" onclick="openGift()">Claim Now</button>
+</section>
+
+<!-- PHASE 2 -->
+<section id="memory">
+    <div class="section">
+        <div class="title">16 – July – 2024</div>
+        <div class="text">
+            By your buddhuu…  
+            Tumhari dosti ne mujhe wo pyaar diya jo koi nahi de paata 💗
+        </div>
+        <button class="continue-btn" onclick="scrollNext()">Continueeee…</button>
+    </div>
+
+    <div class="section" id="april">
+        <div class="title">Best Day of Our Life – 18 April</div>
+        <div class="text">
+           18th April 🤍
+
+April 18th will always be my favorite date, because on that day, something incredibly beautiful happened — we chose each other. It wasn’t just a proposal, it was two hearts finally finding home in one another. The way you looked at me, the warmth in your eyes, the quiet happiness in your smile… everything about that moment felt pure and magical. From that day, loving you became the most natural thing in my life. Every small laugh we shared, every little moment of closeness, every heartbeat felt louder when I was with you. You didn’t just become my girlfriend that day, you became my comfort, my peace, and my happiest thought. April 18th reminds me how deeply we cared, how genuinely we loved, and how special it felt to hold each other’s hearts so softly. No matter where life takes us, that day will always live inside me — as the moment when love felt real, simple, and endlessly beautiful. 🤍💕
+        </div>
+    </div>
+</section>
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+    <div class="popup-box">
+        A small surprise from your <b>Ishaann</b>…<br>
+        <span>My dear Shivanshi 💖</span><br><br>
+        <button onclick="openPhase3()">Click to Claim</button>
+    </div>
+</div>
+
+<!-- PHASE 3 -->
+<section id="phase3">
+    <div class="section">
+        <div class="title">From My Heart 💌</div>
+        <div class="text" id="typing"></div>
+    </div>
+</section>
+
+<!-- PHASE 4 -->
+<section id="phase4">
+    <button class="promise-btn" onclick="openPromise()">Promise 💖</button>
+
+    <div class="promise-window" id="promiseWindow">
+        <h2>My Promises 🌷</h2>
+
+        <label><input type="checkbox" onclick="sparkle(event)"> Apne aap ko bahut khush rakhogi 💗</label>
+        <label><input type="checkbox" onclick="sparkle(event)"> Apne aap ko first priority dogi ✨</label>
+        <label><input type="checkbox" onclick="sparkle(event)"> Apne aap se pyaar karogi 🌸</label>
+
+        <p style="margin-top:25px;color:#0d47a1">
+            And I promise you… Ishaan is yours till my lifeee 💕
+        </p>
+    </div>
+</section>
+
+<div class="goodbye" id="goodbye">
+    Thank youuu soo muchhh mineeee 💖<br>
+    byeeee byeeeeeeee<br>
+    loveeee youuu dher saara 💕
+</div>
+
+<script>
+/* stars */
+const stars=document.querySelector('.stars');
+for(let i=0;i<120;i++){
+    let s=document.createElement('div');
+    s.className='star';
+    s.style.top=Math.random()*100+'%';
+    s.style.left=Math.random()*100+'%';
+    stars.appendChild(s);
+}
+
+/* flowers */
+for(let i=0;i<18;i++){
+    let f=document.createElement('div');
+    f.className='flower';
+    f.innerHTML=Math.random()>.5?'🌸':'🌹';
+    f.style.left=Math.random()*100+'%';
+    document.body.appendChild(f);
+}
+
+/* phase flow */
+function openGift(){
+    landing.style.opacity=0;
+    setTimeout(()=>{
+        landing.style.display='none';
+        memory.style.opacity=1;
+        memory.style.pointerEvents='auto';
+        setTimeout(()=>popup.style.display='flex',8000);
+    },1500);
+}
+function scrollNext(){
+    april.scrollIntoView({behavior:'smooth'});
+}
+function openPhase3(){
+    popup.style.display='none';
+    memory.style.display='none';
+    phase3.style.opacity=1;
+    phase3.style.pointerEvents='auto';
+    startTyping();
+    setTimeout(()=>openPhase4(),12000);
+}
+function openPhase4(){
+    phase3.style.display='none';
+    phase4.style.opacity=1;
+    phase4.style.pointerEvents='auto';
+}
+function openPromise(){
+    document.querySelector('.promise-btn').style.display='none';
+    promiseWindow.style.display='flex';
+}
+
+/* typing */
+const letter=`My dearest Shivanshi,
+
+I don’t even know where to begin, because every word feels too small compared to what I feel for you. I just know one thing with absolute certainty — I love you, deeply, endlessly, with every part of my heart.
+
+Your eyes… they have this magic. When I look into them, the whole world just goes quiet. They make me feel safe, understood, and strangely complete. And your smile — God, your smile — it can fix my worst days without you even trying. One smile from you, and everything inside me feels lighter.
+
+What I love the most is you, just the way you are. Your behaviour, your simplicity, the smallest things you do without even realizing — the way you talk, the way you care, the way you exist — they are all so unbelievably cute. Your simple actions mean more to me than grand gestures ever could.
+
+I want you to know this clearly: I can do anything for you. There is no limit when it comes to you. I love you so, so much — dher saara pyaar. I truly don’t know how to be without you; reh nahi sakta tumhare bina. You are not just a part of my life — you are my life.
+
+I also want to say sorry… from my heart. I know I have hurt you many times, knowingly or unknowingly. For every tear, every moment of pain I caused, I am genuinely sorry. You never deserved that. I promise you this — I will try every single day to keep you happy, to protect your smile, to be better for you.
+
+I may not be perfect, but my love for you is honest and forever. I choose you — today, tomorrow, and always.
+
+Forever yours,
+Ishaan (buddhu) 💕💕`;
+let i=0;
+function startTyping(){
+    if(i<letter.length){
+        typing.innerHTML+=letter.charAt(i);
+        i++;
+        setTimeout(startTyping,35);
+    }
+}
+
+/* sparkle + goodbye */
+function sparkle(e){
+    for(let i=0;i<12;i++){
+        let s=document.createElement('div');
+        s.className='sparkle';
+        s.innerHTML='✨';
+        s.style.left=e.clientX+'px';
+        s.style.top=e.clientY+'px';
+        document.body.appendChild(s);
+        setTimeout(()=>s.remove(),1000);
+    }
+    const all=[...promiseWindow.querySelectorAll('input')];
+    if(all.every(cb=>cb.checked)){
+        setTimeout(()=>goodbye.classList.add('show'),1200);
+    }
+}
+</script>
+
+</body>
+</html>
